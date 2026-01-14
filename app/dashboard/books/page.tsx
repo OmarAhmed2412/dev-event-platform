@@ -8,8 +8,10 @@ interface Book {
     genre: string;
 }
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export default async function Books() {
-    const res = await fetch('http://localhost:3000/api/books', { cache: 'no-store' });
+    const res = await fetch(API_URL!, { cache: 'no-store' });
     if (!res.ok) {
         throw new Error('Failed to fetch books');
     }
@@ -27,7 +29,7 @@ export default async function Books() {
                         className="block p-4 border border-gray-700 rounded shadow hover:shadow-lg hover:-translate-y-1 transition"
                     >
                         <div className="flex items-center gap-4">
-                            <div className="w-16 h-16 rounded-full"/>
+                            <div className="w-16 h-16 rounded-full bg-sky-500"/>
                             <div>
                                 <h2 className="font-bold text-lg">
                                     {book.title} by <span className="text-gray-600">{book.author}</span>
