@@ -8,6 +8,7 @@ export default function Home() {
         <ul>
           <li><Link href="/dashboard/analytics">Dashboard analytics</Link></li>
           <li><Link href="/dashboard/users">Dashboard users</Link></li>
+          <li><Link href="/dashboard/books">Dashboard books</Link></li>
         </ul>
       </main>
     </>
